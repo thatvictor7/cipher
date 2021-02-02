@@ -22,7 +22,16 @@ function getKeyByValue(object, value) {
 function stringIterator(string, shift) {
     let cipherText = ''
     for (let i = 0; i < string.length; i++) {
-        string[i] == ' ' ? cipherText = cipherText + ' ' : cipherText = cipherText + charConverter(string[i], shift)
+        let lowCaseChar = string[i].toLowerCase()
+        // string[i] == ' ' ? cipherText = cipherText + ' ' : cipherText = cipherText + charConverter(lowCaseChar, shift)
+        if (string[i]  == ' ') {
+            cipherText = cipherText + ' '
+        } else if (string[i] == ',' || string[i] == '.') {
+            cipherText = cipherText + string[i]
+            console.log('if statement,,,', string[i]);
+        } else {
+            cipherText = cipherText + charConverter(lowCaseChar, shift)
+        }
     }
     console.log(cipherText);
 }
@@ -33,5 +42,5 @@ function charConverter(string, shift) {
     return cipher[cipheredKey]
 }
 
-stringIterator('victor is cool because ll', 4)
+stringIterator('Maintain, analyze, and repair hardware and software systems.', 3)
 // console.log(typeof alphabet)
