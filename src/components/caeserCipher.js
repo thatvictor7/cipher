@@ -43,4 +43,3 @@ function charConverter(string, shift) {
 }
 
 stringIterator('Maintain, analyze, and repair hardware and software systems.', 3)
-// console.log(typeof alphabet)
